@@ -4,6 +4,7 @@ source 'https://rails-assets.org'
 
 gem 'rails', '4.1.1'
 gem 'sqlite3'
+gem 'smarter_csv'
 
 # Assets
 gem 'haml-rails'
