@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title CatsGallery
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+
+    .col-md-8.col-md-offset-2
+      .navbar.navbar-default
+        = link_to 'Messager', root_path, class: 'navbar-brand'
+
+    .col-md-8.col-md-offset-2
+      - if notice
+        .alert.alert-success= notice
+      - if alert
+        .alert.alert-danger= alert
+      .col-md-6.col-md-offset-3
+        = yield
