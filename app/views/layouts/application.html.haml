@@ -10,6 +10,10 @@
     .col-md-8.col-md-offset-2
       .navbar.navbar-default
         = link_to 'Messager', root_path, class: 'navbar-brand'
+        .container-fluid
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'New Message', new_message_path
+            %li= link_to 'Import messages to database', import_to_db_messages_path
 
     .col-md-8.col-md-offset-2
       - if notice
