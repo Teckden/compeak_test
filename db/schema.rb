@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123202556) do
+ActiveRecord::Schema.define(version: 20141123203050) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "submitter_id"
+  end
+
+  add_index "messages", ["submitter_id"], name: "index_messages_on_submitter_id"
+
+  create_table "submitters", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
