@@ -1,0 +1,17 @@
+%h1 Contact Us
+
+= form_for @message, url: create_csv_record_messages_path do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', required: true
+  .form-group
+    = f.label :email
+    = f.email_field :email, class: 'form-control', required: true
+  .form-group
+    = f.label :subject
+    = f.text_field :subject, class: 'form-control', required: true
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: 'form-control', required: true
+  .actions
+    = f.submit 'Submit', class: 'btn btn-primary', required: true

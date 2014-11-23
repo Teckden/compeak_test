@@ -1,2 +1,23 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+%h1.text-center Messages
+%br
+%ul.list-unstyled
+  -if @messages.blank?
+    %h3 No messages
+  - @messages.each do |message|
+    %li
+      .container-fluid
+        .pull-left
+          %p
+            %strong Submitter Name: &nbsp;
+            = message.submitter.try(:name)
+          %p
+            %strong Submitter Email: &nbsp;
+            = message.submitter.try(:email)
+          %p
+            %strong Subject: &nbsp;
+            = message.subject
+          %p
+            %strong Content: &nbsp;
+            = message.content
+        .pull-right= link_to 'Delete', message_path(message.id), method: :delete, class: 'btn btn-danger'
+      %hr
