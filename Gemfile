@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
-
+ruby '2.1.2'
 gem 'rails', '4.1.1'
-gem 'sqlite3'
 gem 'smarter_csv'
 gem 'kaminari'
 
@@ -15,7 +14,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'rails-assets-bootstrap'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'json_spec'

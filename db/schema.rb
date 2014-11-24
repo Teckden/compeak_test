@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141123203050) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "messages", force: true do |t|
     t.string   "subject"
     t.text     "content"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20141123203050) do
     t.integer  "submitter_id"
   end
 
-  add_index "messages", ["submitter_id"], name: "index_messages_on_submitter_id"
+  add_index "messages", ["submitter_id"], name: "index_messages_on_submitter_id", using: :btree
 
   create_table "submitters", force: true do |t|
     t.string   "name"
