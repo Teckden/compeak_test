@@ -1,28 +1,12 @@
-== README
+== Test Task
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create simple contact form with following fields: Name, Email, Subject, Contents.
 
-Things you may want to cover:
+* All submitted messages must be stored to CSV file
+* Create task to import all messages from CSV file to database to appropriate model
+* Create view of all messages with option to delete them
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Bonus:
+* add required validation for all fields
+* add email validation
+* on import of messages to database create model for submitter with email as unique identifier and make all messages as relation for submitter
